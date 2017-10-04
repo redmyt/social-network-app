@@ -1,6 +1,6 @@
 # Social network application
 
-App description...
+App description...!!!!!!!
 
 ## Technologies which have been used:
 * Django (1.11.5)
