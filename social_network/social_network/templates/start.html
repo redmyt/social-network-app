@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+
+<div class="container-fluid ">
+      
+    <nav class="navbar navbar-default" role="navigation">
+       <div class="navbar-brand col-lg-5">Test header</div>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Password">
+        </div>
+        <a href="{% url 'profile' %}">
+        <button type="button" class="btn btn-default">sing in</button>
+        </a>
+      </form>
+        <a href="#" class="navbar-brand">Забули пародь?</a>
+
+</nav>
+   
+
+<div class="container-fluid ">
+<div class="row row-conformity">  
+    <div class="col-lg-4"> </div>  
+    <div class="jumbotron  col-lg-4 center-block">
+        <div class="formsss">
+            <h3>Regester</h3>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-2 control-label">First name</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="first-name"> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-2 control-label">Last name</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="last-name"> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-2 control-label">Phone</label>
+                    <div class="col-10">
+                        <input type="password" class="form-control" id="phone" > </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-2 control-label">Username</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control controls" id="username"> </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-2 control-label">Password</label>
+                    <div class="col-10">
+                        <input type="password" class="form-control" id="password" > </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <!-- <div class="col-12"> -->
+                        <a href="{% url 'profile' %}">
+                            <button type="button" class="btn btn-primary "> Register</button>
+                        </a>
+                    <!-- </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+        {% block navigation %}
+        {% endblock navigation %}
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

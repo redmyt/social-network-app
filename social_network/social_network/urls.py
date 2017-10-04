@@ -20,7 +20,8 @@ from social_network_app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.start_page_view, name='start_page'),
-    url(r'^login', views.login_view, name='login'),
-    url(r'^regester/$', views.regester_view, name='regester'),
+    url(r'^$', views.start_page_view, name='start'),
+    url(r'^profile', views.base_view, name='profile'),
+#    url(r'^login', views.login_view, name='login'),
+#    url(r'^regester/$', views.regester_view, name='regester'),
 ]

@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
 
-def start_page_view(request):
+def base_view(request):
     return render(request, 'base.html')
 
-def login_view(request):
-    return render(request, 'login.html')
+def start_page_view(request):
+    return render(request, 'start.html')
 
-def regester_view(request):
-    return render(request, 'regester.html')
+#def login_view(request):
+#    return render(request, 'login.html')
+
+#def regester_view(request):
+#    return render(request, 'regester.html')
