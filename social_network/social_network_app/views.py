@@ -6,3 +6,6 @@ def base_view(request):
 
 def start_page_view(request):
     return render(request, 'start.html')
+
+def friends_view(request):
+    return render(request, 'friends.html')

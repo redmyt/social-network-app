@@ -123,5 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'social_network_app/static/')
+    os.path.join(BASE_DIR, '/static/')
 ]
