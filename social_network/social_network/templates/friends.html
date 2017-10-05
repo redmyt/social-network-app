@@ -1,0 +1,72 @@
+<div class="col-sm-offset-3 col-sm-6 list-group">
+        <h3 class="text-center">My friends:</h3>
+        <button class="btn btn-md btn-primary btn-block" type="button" data-toggle="modal" data-target="#exampleModal">Add friends</button>
+        <ul class="list-group">
+            <li class="list-group-item">Sname1 Name1
+                <button type="button" class="btn btn-danger btn-xs badge">delete</button>
+            </li>
+            <li class="list-group-item">Sname2 Name2                <button type="button" class="btn btn-danger btn-xs badge">delete</button></li>
+            <li class="list-group-item">Sname3 Name3                <button type="button" class="btn btn-danger btn-xs badge">delete</button></li>
+            <li class="list-group-item">Sname4 Name4                <button type="button" class="btn btn-danger btn-xs badge">delete</button></li>
+            <li class="list-group-item">Sname5 Name5                <button type="button" class="btn btn-danger btn-xs badge">delete</button></li>
+        </ul>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center" id="exampleModalLabel">Add friend</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="exampleInputName2">Name</label>
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Name"> </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">Sname</label>
+                                <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Sname"> </div>
+                            <button type="submit" class="btn btn-primary btn-block">Find friend</button>
+                        </form>
+                        <br>
+                        <br>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Add</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Name2</td>
+                                <td>Sname2</td>
+                                <td>
+                                    <button type="button" class="btn btn-success badge" data-dismiss="modal">Add</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Name3</td>
+                                <td>Sname3</td>
+                                <td>
+                                    <button type="button" class="btn btn-success badge" data-dismiss="modal">Add</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Name4</td>
+                                <td>Sname4</td>
+                                <td>
+                                    <button type="button" class="btn btn-success badge" data-dismiss="modal">Add</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
