@@ -10,14 +10,56 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
+    <style >
+        body{
+/*            background: url(../static/img/imgpsh_fullsize1.jpg);*/
+            background-size: cover;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+        .navbar{
+/*                min-height: 75px;*/
+                background-color: #009B95;
+                border-color: none;
+                border-radius: none;
+                border-radius: 0px;
+            }
+        .navbar-default .navbar-brand {
+                color: #143836;
+            }
+        .btn {
+            background-color: #5CCDC9;
+    display: inline-block;
+    padding: 6px 22px;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2.42857143;
+    /* text-align: center; */
+    /* white-space: nowrap; */
+    vertical-align: middle;
+     border: none; 
+     border-radius: 0px; 
+}
+        .i-emoj .i-friends .i-mcssager{
+/*        height: 500 px;*/
+            line-height: 5.42857143;
+        }
+        
+        
+        .i-friends{background:#5CCDC9;}
+        .i-mcssager{background:#DF004F  ;}
+        .i-emoj{ background:#FFDD73;}
+    </style>
 </head>
 <body>
 
     <div class="container-fluid ">
       
-    <nav class="navbar navbar-default" role="navigation">
+    <nav id="nav" class="navbar" role="navigation">
        <div class="navbar-brand col-lg-8">Test header</div>
       <form class="navbar-form navbar-left  col-lg-4" role="search">
+<!--       <div  class="form-group">glyphicon glyphicon-home</div>-->
         <div class="form-group"> user.name
             {{ user.name }}
         </div>
@@ -25,7 +67,7 @@
             {{ user.sname }}
         </div>
         <a href="{% url 'start' %}">
-        <button type="button" class="btn btn-default">go out</button>
+        <button type="button" class="btn">go out</button>
          </a>
     </form>
 </nav>
@@ -33,14 +75,14 @@
        
 <div class="container">
     <div class="row">
-       <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+       <div class="col-lg-4 i-friends text-center">
             <img src="img/1.jpg" alt="friends" class="img-responsive" />
         </div>
-        <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+        <div class="col-lg-4 i-mcssager text-center">
             <img src="img/2.jpg" alt="mcssager" class="img-responsive" />
         </div>
-        <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
-            <img src="img/3.jpg" alt="emoj" class="img-responsive" />
+        <div class="col-lg-4  i-emoj text-center">
+            <img src="img/3.jpg" alt="emojis" class="img-responsive" />
         </div>
     </div>
 </div>
