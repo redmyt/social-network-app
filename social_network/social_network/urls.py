@@ -21,4 +21,5 @@ from social_network_app import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.start_page_view, name='start_page'),
+    url(r'^friends/$', views.friends_view, name='friends'),
 ]
