@@ -10,10 +10,46 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
+
 </head>
 <body>
-    <div class="container-fluid">
-        <h1>Test header</h1>
+    <div class="container-fluid ">
+
+    <nav id="nav" class="navbar" role="navigation">
+       <div class="navbar-brand col-lg-8">Test header</div>
+      <form class="navbar-form navbar-left  col-lg-4" role="search">
+        <div class="form-group"> UserProfile.name
+            {{ UserProfile.name }}
+        </div>
+        <div class="form-group"> UserProfile.sname
+            {{ UserProfile.sname }}
+        </div>
+        {% comment %} <a href="{% url 'start' %}"> {% endcomment %}
+        <button type="button" class="btn">go out</button>
+         </a>
+    </form>
+</nav>
+
+<div class="container">
+        <div class="row">
+            {% comment %} <a href="{% url 'friends' %}"> {% endcomment %}
+            <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+                <img src="img/1.jpg" alt="friends" class="img-responsive" />
+            </div>
+              </a>
+              {% comment %} <a href="{% url 'mcssager' %}"> {% endcomment %}
+            <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+                <img src="img/2.jpg" alt="mcssager" class="img-responsive" />
+            </div>
+            </a>
+            {% comment %} <a href="{% url 'emojis' %}"> {% endcomment %}
+            <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+                <img src="img/3.jpg" alt="emojis" class="img-responsive" />
+            </div>
+            </a>
+        </div>
+     </div>
+
         {% block navigation %}
         {% endblock navigation %}
         {% block content %}
