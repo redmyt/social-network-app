@@ -1,12 +1,11 @@
-<body>
-   <style>
+<style>
        
 .i-wrapper{    
 }
 .image-wrapper{
     display: flex;
     justify-content: space-between;
-    width: 600px;
+    width: 1030px;
     height: 550px;
     margin: 10px 10px 10px 10px;
     background: #333;
@@ -18,8 +17,15 @@
     } 
     
     .emojis-block{
-    width: 580px;
-    height: 470px;
+    width: 380px;
+    height: 220px;
+    margin: 10px 10px 10px 10px;
+    background: #777;
+    }
+    
+    .stikers-block{
+    width: 380px;
+    height: 220px;
     margin: 10px 10px 10px 10px;
     background: #777;
     }
@@ -35,17 +41,22 @@
     </style>
     
     
-    
-    
     <div class="container-fluid">
-        <h1>Select Emoji =)</h1>
+        <h1>Test header</h1>
+        {% block navigation %}
+        {% endblock navigation %}
+        {% block content %}
+        {% endblock content %}
         
+        <h1>Select Emoji =)</h1>
         <div class="i-wrapper">
-            <div class="image-wrapper">
-                <button class="btn btn-lg btn-warning btn-upload ">Upload New</button>
+            <div class="image-wrapper">                
                 <div class="emojis-block">
-                    <div class="test-emoji">😊😜😉😉😍😍😍😛😃😭😭😐😍😍😍😉😉😊😊😜😜😜🐍🐍🐢🐲🐲🐲🐷🐑🐣🐔🐲🐲🐲</div>
+                <div class="test-emoji">😊😜😉😉😍😍😍😛😃😭😭😐😍😍😍😉😉😊😊😜😜😜🐍🐍🐢🐲🐲🐲🐷🐑🐣🐔🐲🐲🐲</div>
                 </div>
+                <button class="btn btn-lg btn-warning btn-upload ">Upload New!!!</button>
+                <div class="stikers-block"></div>
+                
             </div>
         </div>
         
