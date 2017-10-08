@@ -6,13 +6,14 @@
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'main.css' %}">
-    <link rel="stylesheet" href="{% static 'emojis.css' %}">
+    <link rel="stylesheet" href="{static/css/emojis.css}">
+  
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+      
 </head>
 <body>
     <div class="container-fluid ">
@@ -33,6 +34,7 @@
 </nav>
 
 <div class="container">
+       
         <div class="row">
             {% comment %} <a href="{% url 'friends' %}"> {% endcomment %}
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
@@ -55,6 +57,51 @@
         {% block navigation %}
         {% endblock navigation %}
         {% block content %}
+        
+        
+        
+        
+                <div class="test-emoji">😊😜😉😉😍😍😍😛😃😭😭😐😍😍😍😉😉😊😊😜🐲🐲</div>
+                <section class="emoji-section">
+                
+                <div class="emoji-panel">
+                    <button id="emoji-picker" class="chat-input-tool">EMOJIS 😍 
+                    </button>
+                    <button id="stikers-picker" class="chat-input-tool">STIKERS
+                    </button>
+                </div>
+                
+                <div class="emojis-container">
+                <div class="intercom-composer-popover intercom-composer-emoji-popover">
+                    <div class="intercom-emoji-picker">
+                        <div class="intercom-composer-popover-header">
+                            <input class="intercom-composer-popover-input" placeholder="Search" value="">
+                        </div>
+                        <div class="intercom-composer-popover-body-container">
+                            <div class="intercom-composer-popover-body">
+                                <div class="intercom-emoji-picker-groups">
+                                    <div class="intercom-emoji-picker-group">
+                                        <div class="intercom-emoji-picker-group-title">Frequently used</div><span class="intercom-emoji-picker-emoji" title="thumbs_up">👍</span><span class="intercom-emoji-picker-emoji" title="-1">👎</span><span class="intercom-emoji-picker-emoji" title="blush">😊</span><span class="intercom-emoji-picker-emoji" title="heart_eyes">😍</span></div>
+                                    <div class="intercom-emoji-picker-group">
+                                        <div class="intercom-emoji-picker-group-title">People</div><span class="intercom-emoji-picker-emoji" title="smile">😄</span><span class="intercom-emoji-picker-emoji" title="smiley">😃</span><span class="intercom-emoji-picker-emoji" title="grinning">😀</span><span class="intercom-emoji-picker-emoji" title="blush">😊</span> <span class="intercom-emoji-picker-emoji" title="small_blue_diamond">🔹</span><span class="intercom-emoji-picker-emoji" title="thumbs_up">👍</span><span class="intercom-emoji-picker-emoji" title="-1">👎</span><span class="intercom-emoji-picker-emoji" title="sob">😭</span><span class="intercom-emoji-picker-emoji" title="confused">😕</span><span class="intercom-emoji-picker-emoji" title="neutral_face">😐</span><span class="intercom-emoji-picker-emoji" title="blush">😊</span><span class="intercom-emoji-picker-emoji" title="heart_eyes">😍</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="intercom-composer-popover-caret"></div>
+                </div>
+            </div>
+            
+             <div class="stikers-container">
+                    <h1>Stikers</h1>
+                    <div id="stikers-gallery"> <img src="https://developers.viber.com/docs/img/stickers/40111.png" class="image" /> <img src="https://developers.viber.com/docs/img/stickers/40129.png" class="image" /> <img src="https://i.pinimg.com/736x/09/3e/ed/093eed4dc8138ab553035f37e5abcb69--emoji-faces-smileys.jpg" class="image" /> <img src="http://content.cdn.viber.com/stickers/144/113400/00113400.png" class="image" /> <img src="https://i.pinimg.com/originals/95/5f/09/955f09927c814c93e8156f7457eb275c.jpg" class="image" /> <img src="https://stickers.viber.com/stickers/static/images/product/stickers.3900/sticker.png?v=1502437048" class="image" /> <img src="https://avatanplus.com/files/resources/mid/5728c3c5d5e9c154773cbcf4.png" class="image" /> </div>
+                </div>
+           
+<script src="emojis.js"></script>
+        </section>
+        
+        
+        
         {% endblock content %}
     </div>
 </body>
