@@ -1,8 +1,14 @@
-from django.forms import ModelForm
-from django.contrib.auth.forms import UserCreationForm
+from django import forms
 from .models import *
 
 
-class UserForm(UserCreationForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
+        model = User
+        fields = ('username', 'password', 'first_name', 'last_name')
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('phone',)
