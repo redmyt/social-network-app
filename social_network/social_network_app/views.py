@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .forms import *
 from .models import Profile
+from .forms import *
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -33,3 +34,8 @@ def start_page_view(request):
 
 def friends_view(request):
     return render(request, 'friends.html')
+
+
+@login_required
+def messages_view(request):
+    return render(request, 'messindex.html')

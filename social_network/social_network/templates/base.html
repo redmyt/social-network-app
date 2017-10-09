@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/messstyle.css' %}">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
@@ -13,8 +14,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid ">
-
     <nav id="nav" class="navbar" role="navigation">
        <div class="navbar-brand col-lg-8">Test header</div>
       <form class="navbar-form navbar-left  col-lg-4" role="search">
@@ -28,7 +27,7 @@
         <button type="button" class="btn">go out</button>
          </a>
     </form>
-</nav>
+    </nav>
 
 <div class="container">
         <div class="row">
@@ -48,12 +47,12 @@
             </div>
             </a>
         </div>
-     </div>
 
         {% block navigation %}
         {% endblock navigation %}
         {% block content %}
         {% endblock content %}
-    </div>
+</div>
+<script src="{% static 'js/messscript.js' %}"></script>
 </body>
 </html>
