@@ -1,15 +1,11 @@
-body {
-                background-color: #444444;
-                color: #ffffff;
-                font-family: 'Ubuntu', sans-serif;
-            }               
+              
            
             .stikers-container {
                 visibility: hidden;
                 width: 830px;
                 height: 250px;
                 margin: 10px 10px 10px 10px;
-                background: #333;
+                background: #198563;
             }
            .stikers-container.stikers-container-active{
                visibility: visible;
@@ -33,11 +29,18 @@ body {
             }
             
        
-            .i-wrapper {}       
+            .emoji-section { 
+                padding-top: 30px;
+                padding-bottom: 30px;
+                background-color: #f4f4f4;
+                color: white;
+                font-family: 'Ubuntu', sans-serif;
+            }       
                         
             .test-emoji {
+                color: #198563;
                 margin: 10px;
-                border: 1px solid white;
+                border: 1px solid #198563;
                 text-align: center;
                 font-size: 2rem;
                 left: 0%;
@@ -45,6 +48,7 @@ body {
                 top: 20%;
             }
             
+
             .intercom-composer-popover-input {
                 font-size-adjust: none;
                 font-size: 100%;
@@ -258,7 +262,7 @@ body {
                 bottom: 50px;
                 right: calc(50% - 165px);
                 box-shadow: 0 1px 15px 1px rgba(0, 0, 0, .08);
-                background-color: #fff;
+                background-color: #198563;
                 border-radius: 6px;
                 transition-duration: 200ms;
                 transition-delay: 0ms;
@@ -307,7 +311,7 @@ body {
             }
             
             .intercom-composer-popover-body {
-                background: #248f24;
+                background: #198563;
                 position: absolute;
                 top: 40px;
                 left: 0;
@@ -372,7 +376,7 @@ body {
                 padding: 10px;
                 width: 100px;  
                 height: 50px;
-                background-color: #248f24;
+                background-color: #198563;
                 padding: 10px;
                 border: none;
                 border-radius: 5px;
