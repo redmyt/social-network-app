@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm 
+# from django.contrib.auth.models import User
 from .models import Profile
 from .forms import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.csrf import csrf_exempt
 
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 def user_page_view(request):
     return render(request, 'base.html')
@@ -23,19 +23,24 @@ def start_page_view(request):
             return render(request, 'start.html')
 
     elif request.method == 'POST':
-        user_form = UserForm(request.POST)
+        user_form = SignUpForm(request.POST)
         profile_form = ProfileForm(request.POST)
-        # print(user_form.is_valid())
+
         if user_form.is_valid() and profile_form.is_valid():
-            # user = User(**user_form.cleaned_data)
-            # user.save()
             user_form.save()
-            created_user = User.objects.get(username=user_form.cleaned_data['username'])
-            # user_profile = Profile(user=created_user,
-                                   # phone=profile_form.cleaned_data['phone'])
-            # user_profile.save()
+            username = user_form.cleaned_data['username']
+            created_user = User.objects.get(username=username)
+            user_profile = Profile(user=created_user,
+                                   phone=profile_form.cleaned_data['phone'])
+            user_profile.save()
             login(request, created_user)
             return redirect(reverse('user_page'))
+
+        errors = []
+        errors.append(user_form.errors.items())
+        errors.append(profile_form.errors.items())
+        return render(request, 'start.html', errors)
+
 
 @csrf_exempt
 def login_view(request):
