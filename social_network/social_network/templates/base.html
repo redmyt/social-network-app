@@ -6,11 +6,15 @@
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'main.css' %}">
+  
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+    <link rel="stylesheet" href="emojis.css">
+      
 </head>
 <body>
     <div class="container-fluid ">
@@ -31,6 +35,7 @@
 </nav>
 
 <div class="container">
+       
         <div class="row">
             {% comment %} <a href="{% url 'friends' %}"> {% endcomment %}
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
@@ -55,5 +60,6 @@
         {% block content %}
         {% endblock content %}
     </div>
+    <script src="emojis.js"></script>
 </body>
 </html>
