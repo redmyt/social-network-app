@@ -27,52 +27,98 @@
           <input type="text" class="form-control" placeholder="Password">
         </div>
         {% comment %} <a href="{% url 'profile' %}"> {% endcomment %}
-        <button type="button" class="btn btn-default">sing in</button>
+        <button type="submit" class="btn btn-default">
+        {% comment %} <!--        data-toggle="modal" data-target="#ModalLogin" >--> {% endcomment %}
+        sing in</button>
         </a>
       </form>
-        <a href="#" class="navbar-brand">Забули пародь?</a>
+        <a href="#" class="navbar-brand">Забули пароль?</a>
 
 </nav>
-   
+
+         <!-- ModalLogin -->
+<!--
+<div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="ModalLoginTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLoginTitle">Modal title</h5>
+        
+      </div>
+      <div class="modal-body">
+        
+		  Ваш логін {{Username}}
+		  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>-->
+<!--    -->   
 
 <div class="container-fluid ">
 <div class="row row-conformity">  
     <div class="col-lg-4"> </div>  
     <div class="jumbotron  col-lg-4 center-block">
         <div class="formsss">
-            <h3>Regester</h3>
-            <form class="form-horizontal" role="form" id="form1" method="POST">
+            <h3>Registration</h3>
+            <form name="formR" class="form-horizontal" role="form" id="form1">
+               
                 <div class="form-group">
-                    <label class="col-2 control-label">Username</label>
-                    <div class="col-10">
-                        <input type="text" class="form-control controls" id="username" name="username"> </div>
+ <label class="col-2 control-label">Username</label>
+ <div class="col-10">
+ <input type="text" class="form-control controls" id="username" name="username"> 
+<span class="span" id="span-username">користувач вже існує</span> 
+                        </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-2 control-label">Password</label>
-                    <div class="col-10">
-                        <input type="password" class="form-control" id="password" name="password"> </div>
+ <label class="col-2 control-label">First name</label>
+ <div class="col-10">
+<input type="text" class="form-control" id="first_name" name="first_name">
+<span class="span" id="span-firstname">Будь ласка, вкажіть Ваше ім'я</span> 
+                          </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-2 control-label">First name</label>
-                    <div class="col-10">
-                        <input type="text" class="form-control" id="first_name" name="name"> </div>
+<label class="col-2 control-label">Last name</label>
+<div class="col-10">
+<input type="text" class="form-control" id="last_name" name="last_name">
+<span class="span" id="span-lastname">Будь ласка, вкажіть Ваше прізвище</span> 
+                          </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-2 control-label">Last name</label>
-                    <div class="col-10">
-                        <input type="text" class="form-control" id="last_name" name="sname"> </div>
+<label class="col-2 control-label">Phone</label>
+<div class="col-10">
+<input type="tel" class="form-control" id="phone" name="phone">
+<span class="span" id="span-phone">не заповнене значення</span> 
+                          </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-2 control-label">Phone</label>
-                    <div class="col-10">
-                        <input type="password" class="form-control" id="phone" name="phone"> </div>
+ <label class="col-2 control-label">Password</label>
+ <div class="col-10">
+ <input type="password" class="form-control" id="password" name="password"> 
+<span class="span" id="span-password">Будь ласка, придумайте і введіть пароль</span> 
+                        </div>
+                </div>
+                <div class="form-group">
+ <label class="col-2 control-label">Confirm your password
+</label>
+ <div class="col-10">
+ <input type="password" class="form-control" id="password2" name="password2" > 
+<span class="span" id="span-password">Будь ласка, введіть пароль ще раз</span> 
+                        </div>
                 </div>
                 
-                <br>
+            <br>
                 <div class="form-group">
-                        {% comment %} <a href="{% url 'profile' %}"> {% endcomment %}
-                            <button type="submit" class="btn btn-primary "> Register</button>
-                        </a>
+           {% comment %} <a href="{% url 'profile' %}"> {% endcomment %}
+                    <button type="submit" class="btn btn-primary ">
+     {% comment %}<!-- data-toggle="modal" data-target="#ModalRegister"--> {% endcomment %}
+                              Register</button>
+                       {% comment %}  </a>{% endcomment %}
                 </div>
             </form>
         </div>
@@ -80,10 +126,32 @@
 </div>
 </div>
 
-        {% block navigation %}
-        {% endblock navigation %}
-        {% block content %}
-        {% endblock content %}
+<!-- ModalRegister -->
+<!--
+<div class="modal fade" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="ModalRegisterTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="MeodalRegisterTitle">Modal title</h5>
+        
+      </div>
+      <div class="modal-body">
+        
+		  Ваш логін {{Username}}
+		  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
     </div>
+  </div>
+</div>
+-->
+    </div>
+    
+    <script src="../static/js/start.js"></script>
+    <script src="../static/js/regester.js"></script>
+    
 </body>
 </html>

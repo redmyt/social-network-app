@@ -27,7 +27,7 @@
         <div class="form-group"> UserProfile.sname
             {{ UserProfile.sname }}
         </div>
-        {% comment %} <a href="{% url 'start' %}"> {% endcomment %}
+         <a href="{% url 'start' %}"> 
         <button type="button" class="btn">go out</button>
          </a>
     </form>
@@ -36,7 +36,7 @@
 <div class="container">
        
         <div class="row">
-            {% comment %} <a href="{% url 'friends' %}"> {% endcomment %}
+            <a href="{% url 'friends' %}"> 
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
                 <img src="img/1.jpg" alt="friends" class="img-responsive" />
             </div>
@@ -45,17 +45,17 @@
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
                 <img src="img/2.jpg" alt="mcssager" class="img-responsive" />
             </div>
-            </a>
-            {% comment %} <a href="{% url 'emojis' %}"> {% endcomment %}
+            {% comment %} </a>{% endcomment %}
+             <a href="{% url 'emojis' %}"> 
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
                 <img src="img/3.jpg" alt="emojis" class="img-responsive" />
             </div>
-            </a>
-            {% comment %} <a href="{% url 'emojis2' %}"> {% endcomment %}
+             </a>
+             <a href="{% url 'emojis2' %}"> 
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
                 <img src="img/3.jpg" alt="emojis2" class="img-responsive" />
             </div>
-            </a>
+             </a>
             
         </div>
 
@@ -64,7 +64,7 @@
         {% block content %}
         {% endblock content %}
 </div>
-  </div>
+ 
 <script src="{% static 'js/messscript.js' %}"></script>
 <script src="emojis.js"></script>
 </body>
