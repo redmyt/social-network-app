@@ -11,7 +11,11 @@
             crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-
+<style>
+    span{
+        display: none;
+    }
+    </style>
 </head>
 <body>
 
@@ -71,36 +75,36 @@
                 <div class="form-group">
  <label class="col-2 control-label">Username</label>
  <div class="col-10">
- <input type="text" class="form-control controls" id="username" name="username"> 
-<span class="span" id="span-username">користувач вже існує</span> 
+ <input type="text" class="form-control controls" id="userName" name="username"> 
+<span>Будь ласка, придумайте і вкажіть Ваш логін</span> 
                         </div>
                 </div>
                 <div class="form-group">
  <label class="col-2 control-label">First name</label>
  <div class="col-10">
-<input type="text" class="form-control" id="first_name" name="first_name">
-<span class="span" id="span-firstname">Будь ласка, вкажіть Ваше ім'я</span> 
+<input type="text" class="form-control" id="firstName" name="first_name">
+<span>Будь ласка, вкажіть Ваше ім'я</span> 
                           </div>
                 </div>
                 <div class="form-group">
 <label class="col-2 control-label">Last name</label>
 <div class="col-10">
-<input type="text" class="form-control" id="last_name" name="last_name">
-<span class="span" id="span-lastname">Будь ласка, вкажіть Ваше прізвище</span> 
+<input type="text" class="form-control" id="lastName" name="last_name">
+<span>Будь ласка, вкажіть Ваше прізвище</span> 
                           </div>
                 </div>
                 <div class="form-group">
 <label class="col-2 control-label">Phone</label>
 <div class="col-10">
 <input type="tel" class="form-control" id="phone" name="phone">
-<span class="span" id="span-phone">не заповнене значення</span> 
+<span>не заповнене значення</span> 
                           </div>
                 </div>
                 <div class="form-group">
  <label class="col-2 control-label">Password</label>
  <div class="col-10">
  <input type="password" class="form-control" id="password" name="password"> 
-<span class="span" id="span-password">Будь ласка, придумайте і введіть пароль</span> 
+<span>Будь ласка, придумайте і введіть пароль</span> 
                         </div>
                 </div>
                 <div class="form-group">
@@ -108,7 +112,7 @@
 </label>
  <div class="col-10">
  <input type="password" class="form-control" id="password2" name="password2" > 
-<span class="span" id="span-password">Будь ласка, введіть пароль ще раз</span> 
+<span>Будь ласка, введіть пароль ще раз</span> 
                         </div>
                 </div>
                 
