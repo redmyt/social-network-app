@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^$', views.start_page_view, name='start_page'),
     url(r'^user/$', views.user_page_view, name='user_page'),
     url(r'^friends/$', views.friends_view, name='friends'),
+    url(r'^emojisPage/$', views.emojisPage_view, name='emojis'),
+    url(r'^emojis/$', views.emojis2_view, name='emojis2'),
 ]
