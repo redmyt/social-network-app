@@ -33,3 +33,9 @@ def start_page_view(request):
 
 def friends_view(request):
     return render(request, 'friends.html')
+
+def emojisPage_view(request):
+    return render(request, 'emojisPage.html')
+
+def emojis2_view(request):
+    return render(request, 'emojis.html')
