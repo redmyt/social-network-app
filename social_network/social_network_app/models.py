@@ -1,9 +1,12 @@
 from django.db import models
+from django.db.models import signals
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, related_name='user')
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.IntegerField()
 
     def __str__(self):
@@ -11,11 +14,11 @@ class UserProfile(models.Model):
 
 
 class Message(models.Model):
-    sender = models.ForeignKey(UserProfile,
+    sender = models.ForeignKey(Profile,
                                 on_delete=models.CASCADE,
                                 related_name='sender')
 
-    receiver = models.ForeignKey(UserProfile,
+    receiver = models.ForeignKey(Profile,
                                 on_delete=models.CASCADE,
                                 related_name='receiver')
 
@@ -24,10 +27,10 @@ class Message(models.Model):
 
 
 class FriendsRecord(models.Model):
-    first_friend = models.ForeignKey(UserProfile,
+    first_friend = models.ForeignKey(Profile,
                                     on_delete=models.CASCADE,
                                     related_name='first_friend')
 
-    second_friend = models.ForeignKey(UserProfile,
+    second_friend = models.ForeignKey(Profile,
                                     on_delete=models.CASCADE,
                                     related_name='second_friend')
