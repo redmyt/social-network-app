@@ -1,0 +1,94 @@
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    height: 50px;
+
+    
+}
+
+
+
+/****************Chat BoX**********************************************/
+#chatBox{
+border: 2px solid #2A9134;
+min-height: 600px;
+width: 70%;
+margin: 0 auto;
+background-color: #9CFC97;
+border-radius: 0 10px 10px 0;
+}
+/****************Chat place**********************************************/
+
+#chatPlace{
+border: 2px solid #2A9134;
+height: 400px;
+width: 70%;
+margin: 10px auto;
+background-color: #FBFFFE;
+border-radius: 15px;
+}
+
+/*************class="leftBox"***********/
+
+.leftBox{
+    border: 2px solid #2A9134;
+    border-right: 0px;
+    min-height: 600px;
+    width: 30%;
+    background-color: #9CFC97;
+    overflow: auto;
+    border-radius: 10px 0 0 10px;
+}
+.flex{
+    /*border: 1px solid #04471C;*/
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    display: flex;
+    align-self: auto;
+    margin: 30px;
+    
+}
+
+/************SEARCHFRIEND***********/
+
+#myInput {
+    background-color: #FBFFFE; 
+    background-position: 10px 12px; 
+    background-repeat: no-repeat; 
+    width: 100%; 
+    font-size: 16px; 
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #9CFC97; 
+    margin-bottom: 12px; 
+}
+
+#myUL {
+    
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+#myUL li a {
+    border: 1px solid #9CFC97; 
+    margin-top: -1px; 
+    background-color: #FBFFFE; 
+    padding: 12px; 
+    text-decoration: none; 
+    font-size: 18px; 
+    color: #00120B; 
+    display: block;
+    border-radius: 10px; 
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #399E5A; 
+}
