@@ -54,9 +54,15 @@ def logout_view(request):
 def friends_view(request):
     return render(request, 'friends.html')
 
-
 @login_required
 def messages_view(request):
     user = User.objects.get(pk=request.user.id)
     print(user)
     return render(request, 'messindex.html')
+
+def emojisPage_view(request):
+    return render(request, 'emojisPage.html')
+
+def emojis2_view(request):
+    return render(request, 'emojis.html')
+

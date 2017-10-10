@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/messstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      
+    <link rel="stylesheet" href="emojis.css">
+      
 </head>
 <body>
     <nav id="nav" class="navbar" role="navigation">
@@ -30,6 +34,7 @@
     </nav>
 
 <div class="container">
+       
         <div class="row">
             {% comment %} <a href="{% url 'friends' %}"> {% endcomment %}
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
@@ -46,6 +51,12 @@
                 <img src="img/3.jpg" alt="emojis" class="img-responsive" />
             </div>
             </a>
+            {% comment %} <a href="{% url 'emojis2' %}"> {% endcomment %}
+            <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+                <img src="img/3.jpg" alt="emojis2" class="img-responsive" />
+            </div>
+            </a>
+            
         </div>
 
         {% block navigation %}
@@ -53,6 +64,8 @@
         {% block content %}
         {% endblock content %}
 </div>
+  </div>
 <script src="{% static 'js/messscript.js' %}"></script>
+<script src="emojis.js"></script>
 </body>
 </html>
