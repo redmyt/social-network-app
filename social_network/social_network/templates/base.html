@@ -37,6 +37,7 @@
        
         <div class="row">
             {% comment %} <a href="{% url 'friends' %}"> {% endcomment %}
+            <a href="{% url 'friends' %}"> 
             <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
                 <img src="img/1.jpg" alt="friends" class="img-responsive" />
             </div>
@@ -56,6 +57,17 @@
                 <img src="img/3.jpg" alt="emojis2" class="img-responsive" />
             </div>
             </a>
+            {% comment %} </a>{% endcomment %}
+             <a href="{% url 'emojis' %}"> 
+            <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+                <img src="img/3.jpg" alt="emojis" class="img-responsive" />
+            </div>
+             </a>
+             <a href="{% url 'emojis2' %}"> 
+            <div class="col-md-4 col-sm-12 col-xs-12 my-col text-center">
+                <img src="img/3.jpg" alt="emojis2" class="img-responsive" />
+            </div>
+             </a>
             
         </div>
 
