@@ -127,3 +127,8 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = 'start_page'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
