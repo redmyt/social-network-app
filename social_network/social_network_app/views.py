@@ -66,12 +66,12 @@ def logout_view(request):
 @login_required(login_url='start_page')
 def friends_view(request):
     user_profile = Profile.objects.get(user=request.user)
-    friend_records = FriendsRecord.objects.all().filter(Q(first_friend=user_profile) |
+    records = FriendsRecord.objects.all().filter(Q(first_friend=user_profile) |
                                                  Q(second_friend=user_profile))
 
     friends = []
 
-    for record in friend_records:
+    for record in records:
         if record.first_friend != user_profile:
             friends.append(record.first_friend)
         elif record.second_friend != user_profile:
@@ -80,12 +80,30 @@ def friends_view(request):
     return render(request, 'friends.html', friends)
 
 
+@csrf_exempt
 @login_required(login_url='start_page')
 def messages_view(request):
-    user_profile = Profile.objects.get(user=request.user)
-    messages = Message.objects.all().filter(Q(sender=user_profile) |
-                                            Q(receiver=user_profile))
-    return render(request, 'messages.html', messages)
+    if request.method == 'GET':
+        user_profile = Profile.objects.get(user=request.user)
+        messages = Message.objects.all().filter(Q(sender=user_profile) |
+                                                Q(receiver=user_profile))
+        return render(request, 'messindex.html', {'messages': messages})
+
+    elif request.method == 'POST':
+        try:
+            sender = request.user.profile
+            receiver_username = request.POST.get('receiver')
+            receiver = User.objects.get(username=receiver_username).profile
+            message_body = request.POST.get('message_body')
+            date = request.POST.get('date')
+
+            message = Message(sender=sender, receiver=receiver,
+                              message_body=message_body, date=date)
+            message.save()
+        except Exception as err:
+            return render(request, 'messindex.html', {'err': err})
+        finally:
+            return render(request, 'messindex.html')
 
 
 def emojisPage_view(request):

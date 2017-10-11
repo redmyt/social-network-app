@@ -18,3 +18,9 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('phone',)
+
+
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ('sender', 'receiver', 'message_body', 'date')
