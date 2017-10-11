@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	   <link rel="stylesheet" href="../static/css/avatar.css">
+
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+  <div>
+    <label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" multiple>
+  </div>
+  <div class="preview">
+    <p>No files currently selected for upload</p>
+  </div>
+  <div>
+    <button>Submit</button>
+  </div>
+</form>
+
+<script src="../static/js/avatar.js"></script>
+
+</body>
+</html>
