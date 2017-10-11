@@ -45,12 +45,14 @@ def start_page_view(request):
 def login_view(request):
     username = request.POST['username']
     password = request.POST['password']
-    # print(username)
-    # print(password)
-    user = User.objects.get(username=username)
-    # if user is not None:
-        # if user.is_active:
-    login(request, user)
+    user = authenticate(username=username, password=password)
+
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            return redirect(reverse('user_page'))
+
+    return render(request, 'start.html')
 
 
 @csrf_exempt
