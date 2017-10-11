@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.urls import reverse
-from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm 
 from .models import Profile
 from .forms import *
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 
@@ -48,8 +47,10 @@ def login_view(request):
         # if user.is_active:
     login(request, user)
 
+@csrf_exempt    
 def logout_view(request):
     logout(request)
+    return render(request, 'start.html')
 
 def friends_view(request):
     return render(request, 'friends.html')
