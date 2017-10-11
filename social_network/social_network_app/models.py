@@ -22,6 +22,10 @@ class Message(models.Model):
     message_body = models.TextField(blank=False)
     date = models.DateField()
 
+    def __str__(self):
+        return ('from ' + self.sender.user.username +
+                ' to ' + self.receiver.user.username)
+
 
 class FriendsRecord(models.Model):
     first_friend = models.ForeignKey(Profile,
@@ -31,3 +35,7 @@ class FriendsRecord(models.Model):
     second_friend = models.ForeignKey(Profile,
                                       on_delete=models.CASCADE,
                                       related_name='second_friend')
+
+    def __str__(self):
+        return ('friend ' + self.first_friend.user.username +
+                ' friend ' + self.second_friend.user.username)
