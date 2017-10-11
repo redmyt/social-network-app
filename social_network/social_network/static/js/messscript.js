@@ -19,13 +19,6 @@ getId('send').onclick = function(){
          
 }
 
-getId('send2').onclick = function(){
-    var messBody = '<p class="text-warning bg-danger"> Ти: ' + getId('message2').value + '</p>';
-    arraymess.push(messBody);
-    var messagetext = arraymess.join('');
-    getId('chatPlace').innerHTML = messagetext;
-         
-}
 
 
 /*****************SEARCHFRIENDS*********************/
