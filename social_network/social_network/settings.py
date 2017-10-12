@@ -25,6 +25,11 @@ SECRET_KEY = 'm#$)88c)t=zyhf+v8zdecbjf6jyqbc1@f7dj-bd600w71a^bw*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 ALLOWED_HOSTS = []
 
 

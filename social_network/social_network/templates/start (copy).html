@@ -1,23 +1,23 @@
-{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock title %}</title>
+<!--    <title>{% block title %}{% endblock title %}</title>-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'css/main.css' %}">-->
+    <link rel="stylesheet" href="../static/css/main.css">
 </head>
 <body>
 
 <div class="container-fluid ">
       
     <nav class="navbar navbar-default" role="navigation">
-       <div class="navbar-brand col-lg-5">Test header</div>
+       <div class="navbar-brand col-lg-4">Test header</div>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Username">
@@ -25,18 +25,17 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Password">
         </div>
-        {% comment %} <a href="{% url 'profile' %}"> {% endcomment %}
-        <button type="submit" class="btn btn-default">
-        {% comment %} <!--        data-toggle="modal" data-target="#ModalLogin" >--> {% endcomment %}
+<!--         <a href="#"> -->
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalLogin" >
         sing in</button>
-        </a>
+<!--        </a>-->
       </form>
         <a href="#" class="navbar-brand">Забули пароль?</a>
 
 </nav>
 
          <!-- ModalLogin -->
-<!--
+
 <div class="modal fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="ModalLoginTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -56,7 +55,7 @@
       </div>
     </div>
   </div>
-</div>-->
+</div>
 <!--    -->   
 
 <div class="container-fluid ">
@@ -106,18 +105,17 @@
  <label class="col-2 control-label">Confirm your password
 </label>
  <div class="col-10">
- <input type="password" class="form-control" id="password2" name="password2" > 
+ <input type="password" class="form-control" id="password2" name="password2" data-toggle="modal" data-target="#ModalPpassword"> 
 <span>Будь ласка, введіть пароль ще раз</span> 
                         </div>
                 </div>
                 
             <br>
                 <div class="form-group">
-           {% comment %} <a href="{% url 'profile' %}"> {% endcomment %}
-                    <button type="submit" class="btn btn-primary ">
-     {% comment %}<!-- data-toggle="modal" data-target="#ModalRegister"--> {% endcomment %}
+<!--            <a href="#"> -->
+                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#ModalRegister">
                               Register</button>
-                       {% comment %}  </a>{% endcomment %}
+<!--                         </a>-->
                 </div>
             </form>
         </div>
@@ -126,7 +124,7 @@
 </div>
 
 <!-- ModalRegister -->
-<!--
+
 <div class="modal fade" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="ModalRegisterTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -146,11 +144,11 @@
     </div>
   </div>
 </div>
--->
+
     </div>
     
     <script src="../static/js/start.js"></script>
-    <script src="../static/js/regester.js"></script>
+<!--    <script src="../static/js/regester.js"></script>-->
     
 </body>
 </html>
