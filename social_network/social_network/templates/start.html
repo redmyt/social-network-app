@@ -11,6 +11,7 @@
             crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+<!--        <link rel="stylesheet" href="../static/css/main.css">-->
 </head>
 <body>
 
@@ -106,18 +107,26 @@
  <label class="col-2 control-label">Confirm your password
 </label>
  <div class="col-10">
- <input type="password" class="form-control" id="password2" name="password2" > 
+ <input type="password" class="form-control" id="password2" name="password2"> 
 <span>Будь ласка, введіть пароль ще раз</span> 
+                        </div>
+                </div>
+                    <div class="form-group">
+ <input type="checkbox"  id="checkboxRegistration" > <label class="col-2 control-label">I agree that the earth is round
+</label>
+ <div class="col-10">
+<span>Будь ласка, заповніть усі поля</span> 
                         </div>
                 </div>
                 
             <br>
-                <div class="form-group">
-           {% comment %} <a href="{% url 'profile' %}"> {% endcomment %}
-                    <button type="submit" class="btn btn-primary ">
-     {% comment %}<!-- data-toggle="modal" data-target="#ModalRegister"--> {% endcomment %}
-                              Register</button>
-                       {% comment %}  </a>{% endcomment %}
+               
+                <div id="blokRegistration" class="form-group">
+<!--            <a href="#"> -->
+                    <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#ModalRegister"
+                             id="registration">
+                              Registration</button>
+<!--                         </a>-->
                 </div>
             </form>
         </div>
@@ -150,7 +159,7 @@
     </div>
     
     <script src="../static/js/start.js"></script>
-    <script src="../static/js/regester.js"></script>
+<!--    <script src="../static/js/regester.js"></script>-->
     
 </body>
 </html>
