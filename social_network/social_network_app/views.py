@@ -6,6 +6,7 @@ from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+import datetime
 from django.core.files.storage import FileSystemStorage
 
 from django.views.decorators.csrf import csrf_exempt
@@ -83,12 +84,37 @@ def friends_view(request):
 
 @csrf_exempt
 @login_required(login_url='start_page')
-def messages_view(request):
+def messages_view(request, friend):
     if request.method == 'GET':
         user_profile = Profile.objects.get(user=request.user)
         messages = Message.objects.all().filter(Q(sender=user_profile) |
                                                 Q(receiver=user_profile))
-        return render(request, 'messindex.html', {'messages': messages})
+
+        conversation_users = []
+        conversation_messages = []
+
+        for message in messages:
+            if message.sender.user.username == request.user.username:
+                conversation_users.append(message.receiver)
+            else:
+                conversation_users.append(message.sender)
+
+        conversation_users = set(conversation_users)
+
+        if friend:
+            for message in messages:
+                if message.sender.user.username == friend:
+                    conversation_messages.append(message)
+                elif message.receiver.user.username == friend:
+                    conversation_messages.append(message)
+
+        context = {
+            'conversation_users': conversation_users,
+            'conversation_messages': conversation_messages,
+            'conversation_receiver': friend
+        }
+
+        return render(request, 'messindex.html', context)
 
     elif request.method == 'POST':
         try:
@@ -96,15 +122,14 @@ def messages_view(request):
             receiver_username = request.POST.get('receiver')
             receiver = User.objects.get(username=receiver_username).profile
             message_body = request.POST.get('message_body')
-            date = request.POST.get('date')
+            date = datetime.datetime.now()
 
             message = Message(sender=sender, receiver=receiver,
                               message_body=message_body, date=date)
             message.save()
+            return redirect(reverse('messages'))
         except Exception as err:
             return render(request, 'messindex.html', {'err': err})
-        finally:
-            return render(request, 'messindex.html')
 
 
 @csrf_exempt
