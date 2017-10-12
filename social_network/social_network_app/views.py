@@ -6,6 +6,7 @@ from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.core.files.storage import FileSystemStorage
 
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
@@ -104,6 +105,24 @@ def messages_view(request):
             return render(request, 'messindex.html', {'err': err})
         finally:
             return render(request, 'messindex.html')
+
+
+@csrf_exempt
+@login_required(login_url='start_page')
+def avatar_view(request):
+    if request.method == 'GET':
+        form = UploadFileForm()
+        return render(request, 'avatar.html', {'form': form})
+
+    elif request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            myfile = request.FILES['user_file']
+            fs = FileSystemStorage(location='social_network/static/img/')
+            myfile.name = request.user.username + '-' + myfile.name
+            fs.save(myfile.name, myfile)
+            return redirect(reverse('user_page'))
+        return render(request, 'avatar.html', {'form': form})
 
 
 def emojisPage_view(request):
