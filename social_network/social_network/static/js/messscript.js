@@ -11,13 +11,7 @@ function getCl(ok, a){
 }
 
 var arraymess = [];
-getId('send').onclick = function(){
-    var messBody = '<p align="right" class="text-success bg-success"> Я: ' + getId('message').value + '</p>';
-    arraymess.push(messBody);
-    var messagetext = arraymess.join('');
-    getId('chatPlace').innerHTML = messagetext;
-         
-}
+
 
 
 
