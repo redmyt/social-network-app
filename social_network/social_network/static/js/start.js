@@ -103,5 +103,5 @@ if(document.forms.formR.checkboxRegistration.checked = false){
 getE('blokRegistration').style.pointerEvents="auto";
 }
 else{
-getE('blokRegistration').style.pointerEvents="none"; 
+getE('blokRegistration').style.pointerEvents="auto"; 
 }

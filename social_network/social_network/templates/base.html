@@ -21,14 +21,14 @@
     <nav id="nav" class="navbar" role="navigation">
        <div class="navbar-brand col-lg-8">Test header</div>
       <form class="navbar-form navbar-left  col-lg-4" role="search">
-        <div class="form-group"> UserProfile.name
-            {{ UserProfile.name }}
+        <div class="form-group">
+            {{ user.first_name }}
         </div>
-        <div class="form-group"> UserProfile.sname
-            {{ UserProfile.sname }}
+        <div class="form-group">
+            {{ user.last_name }}
         </div>
         {% comment %} <a href="{% url 'start' %}"> {% endcomment %}
-        <button type="button" class="btn">go out</button>
+        <a href="/logout">Logout</a>
          </a>
     </form>
     </nav>
