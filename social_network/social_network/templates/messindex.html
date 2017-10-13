@@ -6,31 +6,28 @@
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for friends..">
 
                     <ul id="myUL">
-                      {% for conversation_user in conversation_users %}
-                        <li>
-                          <a href="{{conversation_user.user.username}}" class="conversation-btn">
-                            {{conversation_user.user.username}}
-                          </a>
-                        </li>
-                      {% endfor %}
+                      <li><a href="#">Аня <span class="badge">2</span></a></li>
+                      <li><a href="#">Арина</a></li>
+
+                      <li><a href="#">Боб <span class="badge">1</span></a></li>
+                      <li><a href="#">Богдана</a></li>
+
+                      <li><a href="#">Вася <span class="badge">3</span></a></li>
+                      <li><a href="#">Вова</a></li>
+                      <li><a href="#">Валентина</a></li>
+                      
+                      
                     </ul>
     </div>
     <div id="chatBox" >
        <div id="chatPlace" class="form-control">
-          {% for conversation_message in conversation_messages %}
-            <p align="right" class="text-success bg-success">
-            {{conversation_message.message_body}} 
-            {% if conversation_message.sender.user.username == user.username %}
-                : My message
-            {% endif %}
-          </p>
-          {% endfor %}
         </div>
-               <form role="form" method="POST">
-               <textarea id="message" name="message_body" placeholder="Write something.." class="form-control" rows="5"></textarea>
-                   <input id="receiver" type="hidden" value="{{conversation_receiver}}" name="receiver" class="btn btn-success">
-                   <input id="send" type="submit" class="btn btn-success">
-                   <button type="button" class="btn btn-danger">Emoji Add <span class="glyphicon glyphicon-sunglasses"></span></button></form>
+               <form role="form">
+               <textarea id="message" name="messagename" placeholder="Write something.."  value="" class="form-control" rows="5"></textarea>
+                   <input id="send" type="button" onclick="EncryptMessage()" value="Send" class="btn btn-success">
+                   <button class="btn btn-danger">Emoji Add <span class="glyphicon glyphicon-sunglasses"></span></button></form>
     </div>
     </div>
 {% endblock content %}
+<script src="../static/js/forge.min.js"></script>
+<script src="../static/js/cipher.js"></script>
