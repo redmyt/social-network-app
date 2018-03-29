@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="flex">
+    <div class="leftBox">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for friends..">
+
+                    <ul id="myUL">
+                      <li><a href="#">Аня <span class="badge">2</span></a></li>
+                      <li><a href="#">Арина</a></li>
+
+                      <li><a href="#">Боб <span class="badge">1</span></a></li>
+                      <li><a href="#">Богдана</a></li>
+
+                      <li><a href="#">Вася <span class="badge">3</span></a></li>
+                      <li><a href="#">Вова</a></li>
+                      <li><a href="#">Валентина</a></li>
+                      
+                      
+                    </ul>
+    </div>
+    <div id="chatBox" >
+       <div id="chatPlace" class="form-control">
+        </div>
+               <form role="form">
+               <textarea id="message" name="messagename" placeholder="Write something.."  value="" class="form-control" rows="5"></textarea>
+                   <input id="send" type="button" onclick="EncryptMessage()" value="Send" class="btn btn-success">
+                   <button class="btn btn-danger">Emoji Add <span class="glyphicon glyphicon-sunglasses"></span></button></form>
+    </div>
+    </div>
+{% endblock content %}
+<script src="../static/js/forge.min.js"></script>
+<script src="../static/js/cipher.js"></script>

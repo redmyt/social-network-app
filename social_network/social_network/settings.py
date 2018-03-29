@@ -25,6 +25,11 @@ SECRET_KEY = 'm#$)88c)t=zyhf+v8zdecbjf6jyqbc1@f7dj-bd600w71a^bw*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 ALLOWED_HOSTS = []
 
 
@@ -76,24 +81,21 @@ WSGI_APPLICATION = 'social_network.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'social_network_db',
+        'USER': 'social_network_user',
+        'PASSWORD': '123456Qwerty!',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
@@ -106,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Istanbul'
 
 USE_I18N = True
 
@@ -120,5 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'social_network_app/static/')
+    os.path.join(BASE_DIR, 'social_network/static')
 ]
+
+LOGIN_REDIRECT_URL = 'start_page'
